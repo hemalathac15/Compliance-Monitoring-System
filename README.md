@@ -38,7 +38,7 @@ tests/test_scenario.py::test_regulatory_update_impact PASSED                    
 ====================================== 3 passed in 12.30s ======================================
 
 
-Live CLI Multi-Agent Orchestration:
+### 2. Live CLI Multi-Agent Orchestration:
 Sample output showing real-time event evaluation, threat detection, and auto-filing draft assignment across all 3 surveillance domains:
 
 ============================================================
@@ -61,7 +61,7 @@ Sample output showing real-time event evaluation, threat detection, and auto-fil
 
 [✔] Multi-agent surveillance execution complete.
 
-Interactive Streamlit Dashboard Output:
+### 3. Interactive Streamlit Dashboard Output:
 When an off-channel communication violation is evaluated ("Let's move this conversation to WhatsApp..."), the system flags the high risk and outputs structured agent JSON along with the generated filing draft:
 
 Agent Evaluation (Structured JSON Output):
