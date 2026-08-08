@@ -18,25 +18,46 @@ An end-to-end, multi-agent AI surveillance system designed to detect compliance 
 
 ---
 
-## Execution & Test Results
+## 🧪 Test Results & Validation
 
-### 1. Automated Test Suite Execution (`pytest`)
-All multi-agent detection pipelines and escalation paths pass end-to-end unit testing with 100% success rate:
+The system undergoes automated end-to-end testing against **20 real-world compliance scenarios** using `pytest`. The scenarios cover global regulatory standards from the **SEC, FCA, FINRA, OFAC, RBI, and SEBI**.
 
-```bash
-$ pytest tests/test_scenario.py -v
+### Scenario Test Coverage
 
+* **Communication Scanner:** SEC off-channel chats (WhatsApp), insider trading tips, FINRA spoofing intent, FCA market manipulation, routine client inquiries.
+* **Transaction Monitor:** Spoofing order patterns, OFAC sanctioned entity transfers, wash trading, front-running, FinCEN structuring/smurfing, microcap pump & dump, routine settlements.
+* **Regulatory Tracker:** FCA Consumer Duty impact, SEC T+1 settlement transitions, OFAC SDN additions, FINRA crypto guidance, RBI cybersecurity framework, SEBI insider trading definitions, administrative circulars.
+* **Report Generator:** Automated Suspicious Activity Report (SAR) generation and escalation triggers.
+
+### Execution Summary
+
+```text
 ===================================== test session starts ======================================
-platform win32 -- Python 3.14.2, pytest-9.1.1, pluggy-1.6.0
-plugins: anyio-4.14.2, langsmith-0.10.16
-collected 3 items                                                                               
+platform win32 -- Python 3.14.2, pytest-9.1.1
+rootdir: D:\Zetheta Project\compliance-monitoring-system
 
-tests/test_scenario.py::test_communication_off_channel_detection PASSED                 [ 33%]
-tests/test_scenario.py::test_transaction_spoofing_detection PASSED                        [ 66%]
-tests/test_scenario.py::test_regulatory_update_impact PASSED                             [100%]
+tests/test_scenario.py::test_sec_off_channel_whatsapp PASSED                              [  5%]
+tests/test_scenario.py::test_sec_insider_trading_tip PASSED                                [ 10%]
+tests/test_scenario.py::test_finra_spoofing_intent PASSED                                 [ 15%]
+tests/test_scenario.py::test_fca_market_manipulation_benchmark PASSED                     [ 20%]
+tests/test_scenario.py::test_routine_client_inquiry_low_risk PASSED                       [ 25%]
+tests/test_scenario.py::test_finra_spoofing_order_pattern PASSED                          [ 30%]
+tests/test_scenario.py::test_ofac_sanctioned_entity_transfer PASSED                       [ 35%]
+tests/test_scenario.py::test_fca_wash_trading PASSED                                      [ 40%]
+tests/test_scenario.py::test_finra_front_running PASSED                                   [ 45%]
+tests/test_scenario.py::test_fincen_structuring_smurfing PASSED                           [ 50%]
+tests/test_scenario.py::test_sec_pump_and_dump_microcap PASSED                            [ 55%]
+tests/test_scenario.py::test_routine_settlement_low_risk PASSED                           [ 60%]
+tests/test_scenario.py::test_fca_consumer_duty_high_impact PASSED                         [ 65%]
+tests/test_scenario.py::test_sec_t_plus_1_settlement PASSED                               [ 70%]
+tests/test_scenario.py::test_ofac_sanctions_list_update PASSED                            [ 75%]
+tests/test_scenario.py::test_finra_crypto_communications PASSED                           [ 80%]
+tests/test_scenario.py::test_rbi_cybersecurity_framework PASSED                           [ 85%]
+tests/test_scenario.py::test_sebi_insider_trading_definition PASSED                       [ 90%]
+tests/test_scenario.py::test_routine_administrative_circular_low_risk PASSED              [ 95%]
+tests/test_scenario.py::test_high_risk_sar_generation PASSED                             [100%]
 
-====================================== 3 passed in 12.30s ======================================
-
+================================ 20 passed in 75.77s (0:01:15) =================================
 
 ### 2. Live CLI Multi-Agent Orchestration:
 Sample output showing real-time event evaluation, threat detection, and auto-filing draft assignment across all 3 surveillance domains:
@@ -94,6 +115,7 @@ Generated SAR Filing Draft:
     "Remind the employee of the company's communication policies"
   ]
 }
+
 
 ---
 
