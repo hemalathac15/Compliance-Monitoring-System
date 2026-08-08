@@ -1,4 +1,3 @@
-#yogiramsuratkumar jaya guru raya!
 import json
 from typing import Union, Dict, Any
 from agents.communication import analyze_communication

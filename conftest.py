@@ -1,4 +1,3 @@
-#yogiramsuratkumar jaya guru raya!
 import os
 from dotenv import load_dotenv
 

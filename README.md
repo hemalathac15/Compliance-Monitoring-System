@@ -16,6 +16,49 @@ An end-to-end, multi-agent AI surveillance system designed to detect compliance 
 
 ![System Architecture Flowchart](./assets/workflow.png)
 
+```text
+                      +-----------------------------------+
+                      |      Input Event / Dashboard      |
+                      |          (dashboard/app.py)       |
+                      +-----------------+-----------------+
+                                        |
+                                        v
+                      +-----------------+-----------------+
+                      |     Compliance Orchestrator       |
+                      |       (core/orchestrator.py)      |
+                      +-----------------+-----------------+
+                                        |
+        +-------------------------------+-------------------------------+
+        |                               |                               |
+        v                               v                               v
++-------+-------+               +-------+-------+               +-------+-------+
+| Communication |               |  Transaction  |               |  Regulatory   |
+| Scanner Agent |               | Monitor Agent |               | Tracker Agent |
+| (agents/      |               | (agents/      |               | (agents/      |
+| communication)|               |  transaction) |               |  regulatory)  |
++-------+-------+               +-------+-------+               +-------+-------+
+        |                               |                               |
+        +-------------------------------+-------------------------------+
+                                        |
+                                        v
+                       [ Risk Score & Threshold Check ]
+                                        |
+                         +--------------+--------------+
+                         |                             |
+                         | Risk >= Threshold           | Risk < Threshold
+                         v                             v
+               +---------+---------+          +--------+--------+
+               |  Report Generator |          |     Log to      |
+               |       Agent       |          |    Database     |
+               | (agents/reporter) |          +-----------------+
+               +---------+---------+
+                         |
+                         v
+               +---------+---------+
+               | Audit DB / Stream |
+               | (database/db.py)  |
+               +-------------------+
+
 ---
 
 ## 🧪 Test Results & Validation
